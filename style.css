@@ -415,6 +415,40 @@ span {
   font-size: 1.5rem;
   color: var(--second-bg-color);
 }
+/* Add this to your breakpoint.css file */
+
+@media (max-width: 768px) {
+  .portfolio-container {
+    grid-template-columns: repeat(1, 1fr); /* Change to single column on mobile */
+    gap: 3rem; /* Increase gap between items */
+  }
+  
+  .portfolio-box {
+    height: auto; /* Let height adjust naturally */
+    margin-bottom: 2rem; /* Add extra bottom margin */
+  }
+  
+  .portfolio-layer a {
+    width: 4rem; /* Make buttons bigger */
+    height: 4rem;
+    margin: 0 1rem; /* Add more space between buttons */
+  }
+  
+  .portfolio-layer a i {
+    font-size: 2rem; /* Make icons bigger */
+  }
+}
+
+/* For even smaller screens */
+@media (max-width: 450px) {
+  .portfolio-layer h4 {
+    font-size: 1.5rem; /* Reduce title size */
+  }
+  
+  .portfolio-layer p {
+    font-size: 0.9rem; /* Reduce text size */
+  }
+}
 
 /* ==========================================
               Contact
