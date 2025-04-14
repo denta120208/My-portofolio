@@ -213,6 +213,7 @@ span {
 .btn:hover {
   box-shadow: none;
 }
+ 
 
 /* ==========================================
               About
@@ -449,6 +450,66 @@ span {
     font-size: 0.9rem; /* Reduce text size */
   }
 }
+/* Improved styling for portfolio layer icons */
+.portfolio-layer {
+  padding: 0 2rem 1.5rem; /* Add more bottom padding */
+}
+
+/* Add a container for the icons */
+.portfolio-layer .icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Space between icons */
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Style for icon links */
+.portfolio-layer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.portfolio-layer a:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .portfolio-layer {
+    padding: 0 1.5rem 2rem; /* More bottom padding on mobile */
+  }
+  
+  .portfolio-layer .icon-container {
+    gap: 1.5rem; /* More space between icons on mobile */
+  }
+  
+  .portfolio-layer a {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
+    display: flex;
+  }
+}
+
+/* For even smaller screens */
+@media (max-width: 450px) {
+  .portfolio-layer .icon-container {
+    flex-direction: row; /* Keep icons in a row */
+    gap: 2rem; /* Even more spacing on small screens */
+  }
+}y
+
 
 /* ==========================================
               Contact
@@ -633,3 +694,50 @@ span {
     font-size: 2.5rem;
   }
 }
+/* Fix for About section image and Download CV button overlap on mobile */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .about-img {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-img img {
+    width: 60%;
+    max-width: 250px;
+  }
+
+  .about-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Add more space below the home image */
+  .home {
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
+  .home-img {
+    margin-right: 0;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .home-img img {
+    width: 60%;
+    max-width: 250px;
+  }
+
+  .home-content {
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+
