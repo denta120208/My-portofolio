@@ -501,14 +501,106 @@ span {
     display: flex;
   }
 }
+/* Fix for portfolio section on mobile */
+@media (max-width: 768px) {
+  .portfolio-container {
+    grid-template-columns: repeat(1, 1fr); /* Single column layout */
+    gap: 10rem; /* Large gap to prevent overlay issues */
+  }
+  
+  .portfolio-box {
+    position: relative;
+    height: auto;
+    margin-bottom: 2rem;
+    z-index: 1;
+  }
+  
+  /* Fix for portfolio layer positioning */
+  .portfolio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: 0.5s ease;
+    z-index: 5; /* Higher than the box itself */
+  }
+  
+  /* When not hovered, keep it below */
+  .portfolio-box:not(:hover) .portfolio-layer {
+    z-index: -1;
+  }
+  
+  /* When hovered, bring to front */
+  .portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
+    z-index: 10;
+  }
+  
+  /* Make sure icons are clickable */
+  .portfolio-layer .icon-container {
+    position: relative;
+    z-index: 20;
+    gap: 2rem;
+  }
+  
+  .portfolio-layer a {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 0.8rem;
+    position: relative;
+    z-index: 21; /* Higher than the container */
+  }
+  
+  .portfolio-layer a i {
+    font-size: 2rem;
+  }
+}
 
+/* For even smaller screens */
+@media (max-width: 450px) {
+  .portfolio-container {
+    gap: 12rem; /* Even larger gap for smallest screens */
+  }
+  
+  .portfolio-box {
+    margin-bottom: 3rem;
+  }
+  
+  .portfolio-layer h4 {
+    font-size: 1.5rem;
+  }
+  
+  .portfolio-layer p {
+    font-size: 0.9rem;
+    margin: 0.2rem 0 0.8rem;
+  }
+  
+  .portfolio-layer .icon-container {
+    gap: 1.5rem;
+  }
+}
+
+/* Force proper stacking context */
+.portfolio {
+  position: relative;
+  z-index: 1;
+}
+
+/* Height adjustment for portfolio container */
+@media (max-width: 768px) {
+  .portfolio-container {
+    height: auto !important; /* Override any fixed height */
+  }
+}
 /* For even smaller screens */
 @media (max-width: 450px) {
   .portfolio-layer .icon-container {
     flex-direction: row; /* Keep icons in a row */
     gap: 2rem; /* Even more spacing on small screens */
   }
-}y
+}
 
 
 /* ==========================================
