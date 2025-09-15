@@ -1,4 +1,26 @@
 /* ==========================================
+              Multiple Text Styles
+=========================================== */
+.multiple-text {
+  white-space: nowrap;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  font-size: 2.5rem;
+  overflow-x: auto;
+  vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .multiple-text {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 450px) {
+  .multiple-text {
+    font-size: 1.5rem;
+  }
+}
+/* ==========================================
               Google Fonts
 =========================================== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
