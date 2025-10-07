@@ -498,6 +498,96 @@ span {
   margin-bottom: 3rem;
 }
 
+/* ==========================================
+   Certificates
+   ========================================== */
+.certificates-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  padding: 2rem 0 4rem;
+}
+
+.certificate-card {
+  background: var(--second-bg-color);
+  padding: 1.2rem;
+  border-radius: 1.2rem;
+  text-align: center;
+  border: 0.2rem solid var(--bg-color);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.certificate-card:hover {
+  border-color: var(--main-color);
+  transform: translateY(-0.4rem);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 251, 255, 0.08);
+}
+
+.certificate-card img {
+  width: 100%;
+  max-width: 240px; /* larger default for desktop */
+  height: auto;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  background: rgba(0,0,0,0.06);
+}
+
+/* Responsive: smaller images on tablets and phones */
+@media (max-width: 1024px) {
+  .certificate-card img {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .certificate-card img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 450px) {
+  .certificate-card img {
+    max-width: 120px;
+  }
+}
+
+.certificate-card h4 {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-top: 0.3rem;
+}
+
+.certificate-card .issuer {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.btn.small {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  border-radius: 1.6rem;
+}
+
+.certificate-card .actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.certificate-card .actions .btn[aria-disabled="true"] {
+  opacity: 0.45;
+  pointer-events: none;
+  box-shadow: none;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border: 0.15rem solid rgba(255,255,255,0.03);
+}
+
 .skill-box {
   flex: 1 1 10rem;
   max-width: 10rem;
