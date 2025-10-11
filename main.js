@@ -73,3 +73,22 @@ const typed = new Typed(".multiple-text", {
   backDelay: 1000,
   loop: true,
 });
+
+/* ===================== 
+    Voice Introduction on First Click (Once per session)
+====================== */
+function playVoiceIntroOnce() {
+  if (!localStorage.getItem('voiceIntroPlayed')) {
+    const introText = "Hello, my name is Ardenta Prada Nirvana. I'm a Full Stack Developer, Mobile Developer, and IT Support.";
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(introText);
+      utterance.lang = 'en-US';
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      window.speechSynthesis.speak(utterance);
+      localStorage.setItem('voiceIntroPlayed', 'true');
+    }
+  }
+}
+
+window.addEventListener('click', playVoiceIntroOnce, { once: true });
