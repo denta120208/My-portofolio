@@ -57,9 +57,20 @@ ScrollReveal({
 
 ScrollReveal().reveal(".home-content, .heading", { origin: "top" });
 ScrollReveal().reveal(
-  ".home-img, .services-container, .portfolio-box, .contact form",
+  ".home-img, .services-container, .contact form",
   { origin: "bottom" }
 );
+
+// Custom ScrollReveal for portfolio-box with viewFactor
+ScrollReveal().reveal(".portfolio-box", {
+  origin: "bottom",
+  viewFactor: 0.3, // Only reveal when 30% of element is visible
+  reset: true,
+  distance: "80px",
+  duration: 2000,
+  delay: 200,
+});
+
 ScrollReveal().reveal(".home-content h1, .about-img", { origin: "left" });
 ScrollReveal().reveal(".home-content p, .about-content", { origin: "right" });
 

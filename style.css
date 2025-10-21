@@ -369,6 +369,8 @@ span {
 =========================================== */
 .portfolio {
   background: var(--second-bg-color);
+  scroll-behavior: smooth;
+  overflow-y: auto;
 }
 
 .portfolio h2 {
@@ -380,6 +382,8 @@ span {
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   gap: 2rem;
+  scroll-behavior: smooth;
+  overflow-y: auto;
 }
 
 .portfolio-container .portfolio-box {
@@ -811,6 +815,10 @@ span {
     overflow-x: hidden !important;
     max-width: 100vw !important;
     width: 100% !important;
+  }
+  .portfolio, .portfolio-container {
+    scroll-behavior: smooth !important;
+    overflow-y: auto !important;
   }
   
   * {
